@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import './header.css';
 import menu from './hamburger-15.svg';
 import Drawer from 'material-ui/Drawer';
@@ -20,6 +20,12 @@ export default class Header extends Component {
         });
     }
 
+    handleClose = () => {
+        this.setState({
+            open: false
+        });
+    }
+
     render() {
         return (
             <div>
@@ -37,9 +43,16 @@ export default class Header extends Component {
                         open={this.state.open}
                         onRequestChange={(open) => this.setState({open})}>
                         <List>
-                            <ListItem primaryText="Home"/>
-                            <ListItem primaryText="About"/>
-                            <ListItem primaryText="Store"/>
+                            <NavLink to="/" style={{ textDecoration: 'none', color: 'unset' }} onClick={this.handleClose}>
+                            <ListItem primaryText="Our Story" 
+                            to="/"/>
+                            </NavLink>
+                            <NavLink to="/weddingDetails" style={{ textDecoration: 'none', color: 'unset' }} onClick={this.handleClose}>
+                            <ListItem primaryText="Wedding Details"/>
+                            </NavLink>
+                            <NavLink to="/slideshow" style={{ textDecoration: 'none', color: 'unset' }} onClick={this.handleClose}>
+                            <ListItem primaryText="Slideshow"/>
+                            </NavLink>
                         </List>
                     </Drawer>
 
