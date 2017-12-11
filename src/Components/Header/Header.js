@@ -29,7 +29,8 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                <nav className='headerNav'>
+                <nav>
+                    <div className='phoneNav'>
                     <img
                         onClick={this.handleToggle}
                         height='20'
@@ -57,19 +58,24 @@ export default class Header extends Component {
                     </Drawer>
 
                     <h1>SC & MF</h1>
+                    </div>
 
+                    <div className='webNav'>
+
+                    <h1>SC & MF</h1>
                     <div className='linksContainer'>
-                        <Link to="/">
+                        <Link to="/" className='navLinks'>
                             <p>Our Story</p>
                         </Link>
 
-                        <Link to="/weddingDetails">
+                        <Link to="/weddingDetails" className='navLinks'>
                             <p>Wedding Details</p>
                         </Link>
 
-                        <Link to="/slideshow">
+                        <Link to="/slideshow" className='navLinks'>
                             <p>SlideShow</p>
                         </Link>
+                    </div>
                     </div>
                 </nav>
             </div>
