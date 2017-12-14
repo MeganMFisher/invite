@@ -3,8 +3,8 @@ import './ourstory.css';
 
 export default function OurStory() {
   return (
-    <div>
-      Route 1 here!
+    <div className='mainBody'>
+      
     </div>
   )
 }
